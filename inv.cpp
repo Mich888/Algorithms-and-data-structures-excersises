@@ -29,27 +29,19 @@ int main() {
         }
     }
 
-    /*
-    for (int i = 0; i < konceSkladowych.size(); i++) {
-        cout << "el: " << konceSkladowych[i] << " ";
-    }
-    */
-    //cout << "\n";
     cout << konceSkladowych.size() - 1 << "\n";
 
     for (int i = 1; i < konceSkladowych.size(); i++) {
 
         int poprzedni = konceSkladowych[i - 1];
         int aktualny = konceSkladowych[i];
-        //cout << "poprzedni: " << poprzedni << "\n";
-        //cout << "aktualny: " << aktualny << "\n";
-        cout << konceSkladowych[i] - poprzedni << " ";
+        cout << aktualny - poprzedni << " ";
 
         for (int i = poprzedni + 1; i <= aktualny; i++) {
             cout << i;
 
             if (i == aktualny) {
-            cout << "\n";
+                cout << "\n";
             }
             else {
                 cout << " ";
