@@ -26,7 +26,6 @@ int main() {
     char ostatniaWczytanaLitera = napis[poczatkowyIndeks];
     char ostatniWczytanyZnak = ostatniaWczytanaLitera;
     ileLiter++;
-    //cout << "znak: " << ostatniaWczytanaLitera << endl;
 
     if (poczatkowyIndeks == napis.size() || poczatkowyIndeks == koncowyIndeks) {
         cout << 1;
@@ -36,36 +35,24 @@ int main() {
 
         for (int i = poczatkowyIndeks + 1; i <= koncowyIndeks; i++) {
             if (napis[i] == '*' || napis[i] == ostatniaWczytanaLitera) {
-
                 odleglosc++;
-                //cout << "odl: " << odleglosc << endl;
-
-
             }
             // Wczytaliśmy inną literę
             else {
                 if (ostatniWczytanyZnak != '*') {
-                    //cout << "koniec" << endl;
                     cout << rozmiar;
                     return 0;
                 }
+
                 ostatniaWczytanaLitera = napis[i];
                 ileLiter++;
                 minodleglosc = min(odleglosc, minodleglosc);
-                //cout << "min: " << minodleglosc << endl;
                 odleglosc = 0;
             }
 
             ostatniWczytanyZnak = napis[i];
         }
     }
-
-    //cout << "poczat: " << poczatkowyIndeks << endl;
-    //cout << "kon: " << koncowyIndeks << endl;
-    //cout << "rozmiar: " << rozmiar << endl;
-    //cout << "mindoleglosc: " << minodleglosc << endl;
-
-
 
     if (ileLiter == 1) {
         cout << 1;
